@@ -1,53 +1,55 @@
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
 
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const message = event.target.message.value;
+
+    alert(`Thank you, ${name}! Your message has been sent.`);
+    
+    // Here you can add your code to send the form data to your server
+    event.target.reset();
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
     });
 });
 
-// Highlight current section in navigation bar
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('nav ul li a');
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 50;
-        const sectionHeight = section.clientHeight;
-        const scrollPos = window.scrollY;
+document.addEventListener('DOMContentLoaded', () => {
+    const texts = [
+        { element: document.getElementById('hero-title'), text: 'John Doe - Indie Game Developer' },
+        { element: document.getElementById('hero-message'), text: 'Creating Engaging and Interactive Experiences' }
+    ];
 
-        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${section.id}`) {
-                    link.classList.add('active');
-                }
-            });
-        }
+    texts.forEach((item) => {
+        item.element.innerHTML = ''; // Clear the text initially
+        typeEffect(item.element, item.text);
     });
-});
 
-// Simple form validation
-const contactForm = document.getElementById('contactForm');
-const nameInput = document.getElementById('name');
-const emailInput = document.getElementById('email');
-const messageInput = document.getElementById('message');
-
-contactForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const nameValue = nameInput.value.trim();
-    const emailValue = emailInput.value.trim();
-    const messageValue = messageInput.value.trim();
-
-    if (nameValue === '' || emailValue === '' || messageValue === '') {
-        alert('Please fill in all fields.');
-    } else {
-        // You can add further logic here, like sending the form data to a server
-        alert('Form submitted successfully!');
-        contactForm.reset();
+    function typeEffect(element, text, speed = 100) {
+        let i = 0;
+        function typing() {
+            if (i < text.length) {
+                element.textContent += text.charAt(i);
+                i++;
+                setTimeout(typing, speed);
+            }
+        }
+        typing();
     }
 });
+
+
+
+
+
+
+
+
+
