@@ -1,82 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>izake's Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Portfolio of John Doe, an indie game developer specializing in React, React Native, Android Studio, and Godot.">
+    <title>Portfolio - John Doe</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <header>
-        <h1>izake's Portfolio</h1>
+    <header class="site-header">
+        <div class="container">
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    <section id="about" class="container about-me">
-        <h2>About Me</h2>
-        <p>I'm izake,some call me Arsalan or even 124k3, an Information Technology student with a passion for programming and game development. Currently pursuing my degree, I have experience in Java, C, C++, Kotlin, Python, React/React-native and Android development.</p>
+
+    <section class="hero">
+        <div class="container">
+            <h1 id="hero-title">John Doe - Indie Game Developer</h1>
+            <p id="hero-message">Creating Engaging and Interactive Experiences</p>
+            <a href="#projects" class="cta-button">View My Work</a>
+        </div>
     </section>
 
-        <h2 id="skill" style="text-align: center">Skills</h2>
-    <section id="skills" class="container skills">
-        <ul>
-             <li>Java</li>
-            <li>C</li>
-            <li>C++</li>
-            <li>Kotlin</li>
-            <li>Python</li>
+
+
+
+    <main>
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p>Hello! I am John Doe, an indie game developer with expertise in React, React Native, Android Studio, and Godot. I create engaging and interactive games and apps with a strong focus on performance and user experience.</p>
+        </section>
+
+     
+
+      
+      
+      <section id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="skills-container">
+        <ul class="skills-list">
+            <li>React</li>
+            <li>React Native</li>
+            <li>Android Studio</li>
+            <li>Godot</li>
         </ul>
-        <ul>
-            <li>Android Development</li>
-            <li>Game Development</li>
-            <li>HTML & CSS</li>
+        <ul class="skills-list">
             <li>JavaScript</li>
-            <li>React/ React-Native</li>
+            <li>HTML & CSS</li>
+            <!-- Add more skills as needed -->
         </ul>
-    </section>
-    <section id="experience" class="container">
-        <h2>Experience</h2>
-        <p>I've worked on various projects during my degree, including Android apps using Android Studio, React-Native; games using Godot, Pygame, OpenGL and LibGDX; and web development projects using React, Html, CSS and JavaScript.</p>
-    </section>
-<section id="projects" class="container projects">
-    <h2>Projects</h2>
-    <div class="project">
-        <h3>Weather App</h3>
-        <p>A simple weather app built with Kotlin.</p>
     </div>
-    <div class="project">
-        <h3>Todo List App</h3>
-        <p>An app to manage your tasks efficiently.</p>
-    </div>
-    <div class="project">
-        <h3>Portfolio Website</h3>
-        <p>A responsive portfolio website showcasing my skills and projects.</p>
-    </div>
-    <!-- Add more projects here -->
 </section>
 
-    <section id="contact" class="container contact-form">
-        <h2>Contact Me</h2>
-        <form>
-            <input type="text" name="name" placeholder="Your Name" required><br>
-            <input type="email" name="email" placeholder="Your Email" required><br>
-            <textarea name="message" placeholder="Your Message" required></textarea><br>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
-    <footer>
-        <p>&copy; 2024 izake's Portfolio</p>
-    </footer>
-    <script src="script.js"></script>
-</body>
+    
+      
+      
+      
+      
+      
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>Game Title 1</h3>
+                <p>Developed using Godot. An engaging platformer game with stunning visuals and captivating gameplay.</p>
+            </div>
+            <div class="project">
+                <h3>App Title 1</h3>
+                <p>Built with React Native. A mobile app with seamless performance and great user experience.</p>
+            </div>
+        </section>
 
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+  
+  
+<footer class="site-footer">
+    <div class="container">
+        <p>&copy; 2024 John Doe. All rights reserved.</p>
+    </div>
+</footer>
+
+
+    <script src="scripts.js"></script>
+</body>
 </html>
